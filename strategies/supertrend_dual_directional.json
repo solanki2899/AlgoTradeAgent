@@ -1,0 +1,13 @@
+{
+    "strategy_name": "Supertrend Dual Directional",
+    "description": "This strategy utilizes the Supertrend indicator to identify both long and short trade opportunities based on its channel direction. Long entries are triggered when the price crosses above the Supertrend channel, indicating an uptrend. Short entries are triggered when the price crosses below the Supertrend channel, signaling a downtrend. Fixed stop loss and take profit percentages are applied for risk management.",
+    "indicators": [
+        {
+            "name": "Supertrend",
+            "period": 10
+        }
+    ],
+    "entry_logic": "Long entry when current price crosses above the Supertrend channel. Short entry when current price crosses below the Supertrend channel.",
+    "sl_percentage": 1.5,
+    "tp_percentage": 3.0
+}

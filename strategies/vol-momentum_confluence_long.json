@@ -1,0 +1,21 @@
+{
+    "strategy_name": "Vol-Momentum Confluence Long",
+    "description": "This strategy identifies long entry opportunities where price has breached the lower Bollinger Band, indicating an oversold condition within a volatility extreme. Concurrently, the Relative Strength Index (RSI) must also signal an oversold state, and Chaikin Money Flow (CMF) must confirm positive accumulation pressure, suggesting a potential reversal.",
+    "indicators": [
+        {
+            "name": "BBANDS",
+            "period": 20
+        },
+        {
+            "name": "RSI",
+            "period": 14
+        },
+        {
+            "name": "CMF",
+            "period": 20
+        }
+    ],
+    "entry_logic": "Price crosses below BB_lower AND RSI < 30 AND CMF > 0.0",
+    "sl_percentage": 2.5,
+    "tp_percentage": 5.0
+}

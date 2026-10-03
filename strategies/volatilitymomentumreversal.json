@@ -1,0 +1,21 @@
+{
+    "strategy_name": "VolatilityMomentumReversal",
+    "description": "This strategy identifies potential reversals by combining Bollinger Band expansion/contraction dynamics with RSI momentum and Chaikin Money Flow volume confirmation. It targets mean reversion opportunities within defined volatility envelopes by entering long when price crosses above the lower Bollinger Band from an oversold RSI condition, supported by positive money flow.",
+    "indicators": [
+        {
+            "name": "BollingerBands",
+            "period": 20
+        },
+        {
+            "name": "RSI",
+            "period": 14
+        },
+        {
+            "name": "CMF",
+            "period": 20
+        }
+    ],
+    "entry_logic": "Long: (CLOSE crosses above LowerBollingerBand(20,2)) AND (RSI(14) crosses above 30) AND (CMF(20) > 0)",
+    "sl_percentage": 1.5,
+    "tp_percentage": 3.0
+}

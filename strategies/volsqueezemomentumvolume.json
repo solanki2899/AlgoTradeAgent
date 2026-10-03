@@ -1,0 +1,21 @@
+{
+    "strategy_name": "VolSqueezeMomentumVolume",
+    "description": "Identifies breakouts from Bollinger Band squeezes, confirmed by positive RSI momentum and increasing On-Balance Volume, aiming to capture strong trend initiations.",
+    "indicators": [
+        {
+            "name": "Bollinger_Bands",
+            "period": 20
+        },
+        {
+            "name": "RSI",
+            "period": 14
+        },
+        {
+            "name": "OBV",
+            "period": 1
+        }
+    ],
+    "entry_logic": "LONG: CLOSE > BB_UPPER_20_2 AND RSI_14 > 50 AND OBV_DIFF_1 > 0; SHORT: CLOSE < BB_LOWER_20_2 AND RSI_14 < 50 AND OBV_DIFF_1 < 0",
+    "sl_percentage": 0.02,
+    "tp_percentage": 0.04
+}

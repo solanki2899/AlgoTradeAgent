@@ -1,0 +1,17 @@
+{
+    "strategy_name": "Dynamic Momentum Alpha Breakout",
+    "description": "Standard trend evaluation alpha framework deployed via mitigation logic.",
+    "indicators": [
+        {
+            "name": "EMA",
+            "period": 14
+        },
+        {
+            "name": "RSI",
+            "period": 14
+        }
+    ],
+    "entry_logic": "Close > EMA_14 and RSI < 65",
+    "sl_percentage": 1.2,
+    "tp_percentage": 2.4
+}

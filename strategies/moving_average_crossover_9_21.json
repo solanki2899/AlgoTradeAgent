@@ -1,0 +1,13 @@
+{
+    "strategy_name": "Moving_Average_Crossover_9_21",
+    "indicators": [
+        "EMA_9",
+        "EMA_21"
+    ],
+    "entry": "Buy when EMA_9 crosses above EMA_21 from below. Volume must be above 20-period average.",
+    "exit": "Sell when EMA_9 crosses below EMA_21 from above.",
+    "parameters": {
+        "fast_period": 9,
+        "slow_period": 21
+    }
+}

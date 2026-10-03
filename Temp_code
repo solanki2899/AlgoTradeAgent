@@ -1,0 +1,69 @@
+# First, run: pip install python-docx
+from docx import Document
+from docx.shared import Pt, RGBColor
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+doc = Document()
+
+# Title
+title = doc.add_heading('SUNIL SOLANKI', 0)
+title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+# Contact info
+contact = doc.add_paragraph('Delhi, India | +91 8802487442 | solanki2899@gmail.com | LinkedIn')
+contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+# SUMMARY
+doc.add_heading('SUMMARY', level=1)
+doc.add_paragraph('Results-driven Data Scientist with 4+ years of experience specializing in Generative AI, RAG systems, and scalable machine learning pipelines. Proven expertise in developing applied agentic workflows, orchestrating LLMs with LangChain and LangGraph, and optimizing data architecture to automate complex business processes. Adept at translating technical architectures into significant time savings and operational efficiency for enterprise applications.')
+
+# EXPERIENCE
+doc.add_heading('EXPERIENCE', level=1)
+
+p = doc.add_paragraph()
+p.add_run('Citibank India — Data Analyst 2').bold = True
+p.add_run('\nChennai, India — Aug 2023 – Present').italic = True
+
+doc.add_paragraph('Generative AI & RAG Chatbot: Engineered an AI chatbot utilizing a RAG pipeline, LangChain, and LangGraph to automate Business Requirements Document (BRD) generation from 10+ documents across 6 distinct data sources. Reduced task time from 2 days to 4 hours.', style='List Bullet')
+doc.add_paragraph('Intent Classification Engine: As a core component of the BRD chatbot, designed a 4-tier intent classification system (QA, Edit, QA+Edit, Out of Scope) driven by prompt instructions with pattern-matching fallbacks. Grounded QA responses using pgvector similarity scoring, passing 60+ rigorous test cases covering data security and prompt injection scenarios.', style='List Bullet')
+doc.add_paragraph('Agentic Workflows (ADK & Helix): Architected an autonomous evidence checklist generation agent for control assessments utilizing Helix and Google ADK custom workflows. Coordinated seamlessly with the UI team to integrate the heavy-UI backend process. Managed end-to-end deployment lifecycle (Dev, SIT, UAT, Prod) within 2 days per cycle utilizing FastAPI, GitHub, OpenShift, and Lightspeed, ultimately reducing an 8-hour task to 1 hour (87.5% efficiency).', style='List Bullet')
+doc.add_paragraph('Pipeline Optimization: Optimized the end-to-end BRD generation pipeline, decreasing execution time from 12 minutes to under 5 minutes through parallel task execution, batch SQL queries, and caching. Implemented schema-partitioned, full-context aware parallel LLM calls to generate independent document sections, securely merging them with comprehensive validation layers. Co-authored and published a whitepaper on this applied agentic workflow.', style='List Bullet')
+doc.add_paragraph('NLP & Process Automation: Automated the analysis of Monitoring and Testing Results utilizing NLP techniques such as clustering and keyword search alongside domain knowledge, saving 600 hours per year.', style='List Bullet')
+doc.add_paragraph('GenAI Code Translation: Spearheaded a Code Translation POC utilizing Generative AI across the entire Software Development Life Cycle, achieving 94% accuracy and saving 5 FTEs.', style='List Bullet')
+
+p = doc.add_paragraph()
+p.add_run('Citibank India — Data Analyst').bold = True
+p.add_run('\nChennai, India — Aug 2022 – Jul 2023').italic = True
+doc.add_paragraph('Built and deployed CNN and LSTM deep learning models for cheque monitoring, achieving a 95% accuracy rate.', style='List Bullet')
+doc.add_paragraph('Led an OCR initiative to analyze normal defect patterns, which increased defect concentration by 30% and saved 25% in manual effort and time.', style='List Bullet')
+
+p = doc.add_paragraph()
+p.add_run('Citibank India — Intern').bold = True
+p.add_run('\nChennai, India — Jan 2022 – Jul 2022').italic = True
+doc.add_paragraph('Designed and implemented an automated web-scraping and content comparison solution utilizing Python, Requests, Beautiful Soup, and Selenium for continuous data extraction, yielding 100% accurate results and saving approximately 2 FTE worth of effort.', style='List Bullet')
+
+# TECHNICAL SKILLS
+doc.add_heading('TECHNICAL SKILLS', level=1)
+doc.add_paragraph('Programming & Databases: Python, PySpark, C++, SQL, SAS, pgvector, PostgreSQL.', style='List Bullet')
+doc.add_paragraph('AI/ML & Data Science: Generative AI, Retrieval-Augmented Generation (RAG), Intent Classification, Applied Agentic Workflows, Prompt Engineering, NLP, CNN, LSTM, Machine Learning.', style='List Bullet')
+doc.add_paragraph('Frameworks & Libraries: LangChain, LangGraph, Langfuse, Google ADK, Helix, FastAPI, Requests, Beautiful Soup, Selenium, Anaconda, Tableau.', style='List Bullet')
+doc.add_paragraph('DevOps & Tools: GitHub, OpenShift, Lightspeed CI/CD, Copilot, Devin.', style='List Bullet')
+doc.add_paragraph('Soft Skills: Stakeholder Management, Problem Solving, Analytical Skills, Cross-Functional Coordination.', style='List Bullet')
+
+# EDUCATION
+doc.add_heading('EDUCATION', level=1)
+doc.add_paragraph('M.C.A., National Institute of Technology Tiruchirappalli — Aug 2019 – Jun 2022 — CGPA: 8.71', style='List Bullet')
+doc.add_paragraph('B.Sc. (Computer Science), University of Delhi — Aug 2016 – May 2019 — CGPA: 8.01', style='List Bullet')
+
+# AWARDS, CERTIFICATIONS & PUBLICATIONS
+doc.add_heading('AWARDS, CERTIFICATIONS & PUBLICATIONS', level=1)
+doc.add_paragraph('Publications: Co-authored and published a Whitepaper on Applied Agentic Workflows for LLM-based BRD generation pipelines.', style='List Bullet')
+doc.add_paragraph('Awards: 2x Copper Award — Received from stakeholders for completing the Generative AI Code Translation POC with results exceeding expectations.', style='List Bullet')
+doc.add_paragraph('Certifications:', style='List Bullet')
+doc.add_paragraph('5-Day AI Agents Intensive — Google (Jan 2026)', style='List Bullet')
+doc.add_paragraph('Fundamentals of AI Agents Using RAG and LangChain — IBM (Dec 2025)', style='List Bullet')
+doc.add_paragraph('Neural Networks and Deep Learning — Coursera (Aug 2023)', style='List Bullet')
+
+file_path = 'SUNIL_SOLANKI_RESUME_UPDATED.docx'
+doc.save(file_path)
+print(f"Success! Your resume has been saved to {file_path}")

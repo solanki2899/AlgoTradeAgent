@@ -1,0 +1,25 @@
+{
+    "strategy_name": "Volumetric RSI Band Reversion",
+    "description": "This strategy aims to capture mean reversion opportunities when price exits Bollinger Bands, confirmed by an oversold RSI and strong buying pressure indicated by Chaikin Money Flow (CMF), within a strong trend as indicated by ADX.",
+    "indicators": [
+        {
+            "name": "RSI",
+            "period": 14
+        },
+        {
+            "name": "Bollinger Bands",
+            "period": 20
+        },
+        {
+            "name": "CMF",
+            "period": 20
+        },
+        {
+            "name": "ADX",
+            "period": 14
+        }
+    ],
+    "entry_logic": "CLOSE < BB_LOWER(20,2) AND RSI(14) < 30 AND CMF(20) > 0 AND ADX(14) > 25",
+    "sl_percentage": 1.5,
+    "tp_percentage": 3.0
+}

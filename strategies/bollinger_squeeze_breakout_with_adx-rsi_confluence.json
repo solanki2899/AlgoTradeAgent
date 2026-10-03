@@ -1,0 +1,21 @@
+{
+    "strategy_name": "Bollinger Squeeze Breakout with ADX-RSI Confluence",
+    "description": "This strategy identifies potential trend initiation by detecting Bollinger Band squeezes followed by price breakouts. Confirmation is sought through rising ADX for trend strength and RSI for momentum alignment, aiming to capture new trend phases.",
+    "indicators": [
+        {
+            "name": "BollingerBands",
+            "period": 20
+        },
+        {
+            "name": "RSI",
+            "period": 14
+        },
+        {
+            "name": "ADX",
+            "period": 14
+        }
+    ],
+    "entry_logic": "Long: Price closes above Bollinger Upper Band following a period where (Bollinger Upper Band - Bollinger Lower Band) was at its 200-period low, AND RSI(14) > 60, AND ADX(14) > 25 and rising. Short: Price closes below Bollinger Lower Band following a period where (Bollinger Upper Band - Bollinger Lower Band) was at its 200-period low, AND RSI(14) < 40, AND ADX(14) > 25 and rising.",
+    "sl_percentage": 2.0,
+    "tp_percentage": 5.0
+}

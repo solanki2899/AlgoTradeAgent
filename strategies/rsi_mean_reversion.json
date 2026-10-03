@@ -1,0 +1,14 @@
+{
+    "strategy_name": "RSI_Mean_Reversion",
+    "indicators": [
+        "RSI_14",
+        "EMA_200"
+    ],
+    "entry": "Price is above EMA_200 (bullish regime) and RSI_14 drops below 30 (oversold pullback).",
+    "exit": "RSI_14 crosses back above 70 or trailing stop hit.",
+    "parameters": {
+        "rsi_period": 14,
+        "oversold": 30,
+        "overbought": 70
+    }
+}

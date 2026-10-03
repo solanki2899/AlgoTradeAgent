@@ -1,0 +1,14 @@
+{
+    "strategy_name": "Bollinger_Band_Breakout",
+    "indicators": [
+        "Bollinger_Bands_20_2",
+        "ATR_14"
+    ],
+    "entry": "Closing price breaks above the Upper Bollinger Band during a low-volatility squeeze interval.",
+    "exit": "Closing price drops below the 20-period Middle Moving Average band.",
+    "parameters": {
+        "bb_period": 20,
+        "bb_std": 2.0,
+        "atr_period": 14
+    }
+}

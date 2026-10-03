@@ -1,0 +1,14 @@
+{
+    "strategy_name": "MACD_Momentum_Trend",
+    "indicators": [
+        "MACD_12_26_9",
+        "Supertrend_10_3"
+    ],
+    "entry": "Supertrend is green and MACD Histogram line crosses above zero line.",
+    "exit": "MACD line drops below Signal Line, or Supertrend flips to red.",
+    "parameters": {
+        "macd_fast": 12,
+        "macd_slow": 26,
+        "macd_signal": 9
+    }
+}

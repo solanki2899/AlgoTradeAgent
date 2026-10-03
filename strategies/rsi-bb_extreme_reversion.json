@@ -1,0 +1,17 @@
+{
+    "strategy_name": "RSI-BB Extreme Reversion",
+    "description": "This strategy identifies mean reversion opportunities when price breaches Bollinger Bands (2 std dev) and RSI (14 period) simultaneously indicates extreme overbought (>70) or oversold (<30) conditions. It aims to capture reversals from these overextended moves, representing a confluence of volatility and momentum signals.",
+    "indicators": [
+        {
+            "name": "RSI",
+            "period": 14
+        },
+        {
+            "name": "BollingerBands",
+            "period": 20
+        }
+    ],
+    "entry_logic": "LONG: Close < BB_Lower(20,2) AND RSI(14) < 30 AND Close is within 1% of BB_Lower(20,2). SHORT: Close > BB_Upper(20,2) AND RSI(14) > 70 AND Close is within 1% of BB_Upper(20,2).",
+    "sl_percentage": 1.75,
+    "tp_percentage": 3.5
+}
